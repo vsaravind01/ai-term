@@ -1,6 +1,6 @@
 [project]
 name = "py-aiterm"
-version = "0.1.0"
+version = "0.1.1"
 description = "A modern, voice-enabled AI terminal assistant with local LLM integration and Model Context Protocol (MCP) support."
 readme = "README.md"
 license = "MIT"
