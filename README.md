@@ -1,5 +1,7 @@
 # AI-Term
 
+[![PyPI version](https://img.shields.io/pypi/v/py-aiterm.svg)](https://pypi.org/project/py-aiterm/)
+
 **AI-Term** is a voice-enabled terminal assistant that integrates LLMs (Large Language Models), Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful Command Line Interface (CLI) experience.
 
 ![AI Term Banner](https://github.com/vsaravind01/ai-term/blob/master/docs/img/banner.png?raw=true)
@@ -20,6 +22,12 @@
 
 ## Installation
 
+### From PyPI (Recommended for users)
+```bash
+pip install py-aiterm
+```
+
+### From Source (For development)
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/vsaravind01/ai-term.git
