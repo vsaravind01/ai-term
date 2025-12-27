@@ -1,0 +1,72 @@
+# Installation & Setup
+
+## Prerequisites
+
+- Python 3.10 or higher
+- `uv` (recommended) or `pip`
+- `ffmpeg` (for audio processing)
+
+## Installation
+
+### Method 1: Docker (Recommended)
+
+The easiest way to run AI-Term is using Docker Compose. This starts all necessary services (CLI, STT, TTS) automatically.
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/vsaravind01/ai-term.git
+   cd ai-term
+   ```
+
+2. **Start the application:**
+   ```bash
+   docker compose up --build
+   ```
+
+   This will build the images and start the services. The CLI will be attached to your terminal.
+
+### Method 2: Local Installation
+
+If you prefer to run locally without Docker:
+
+1. **Install dependencies:**
+   Using `uv` (recommended):
+   ```bash
+   uv sync
+   ```
+   Or `pip`:
+   ```bash
+   pip install -e .
+   ```
+
+## Running the Application
+
+If you are not using Docker, you need to run the services manually.
+
+### 1. Start Support Services
+Open two separate terminal windows/tabs:
+
+**Terminal 1 (STT Service):**
+```bash
+uv run uvicorn ai_term.stt.main:app --port 8001
+```
+
+**Terminal 2 (TTS Service):**
+```bash
+uv run uvicorn ai_term.tts.main:app --port 8002
+```
+
+### 2. Start the CLI
+In your main terminal:
+
+```bash
+uv run ai-term
+# OR
+uv run python -m ai_term.cli.main
+```
+
+## Configuration
+
+You can configure providers and API keys directly in the application Settings screen (press `Ctrl+S` or click Settings).
+
+For more details, see [Configuration Guide](cli/configuration.md).

@@ -1,0 +1,53 @@
+site_name: AI-Term
+site_description: AI Terminal Assistant Documentation
+repo_url: https://github.com/vsaravind01/ai-term
+repo_name: ai-term
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mermaid2
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_docstring_warns: true
+            show_docstring_parameters: true
+            show_docstring_returns: true
+            show_docstring_yields: true
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - Setup: setup.md
+  - CLI:
+    - Overview: cli/index.md
+    - Configuration: cli/configuration.md
+    - Architecture: cli/architecture.md
+    - Features: cli/features.md
+  - Services:
+    - Speech-to-Text: stt/index.md
+    - Text-to-Speech: tts/index.md
+  - API Reference: api.md
