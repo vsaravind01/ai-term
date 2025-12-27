@@ -19,4 +19,4 @@ The service uses `fastapi` for the web server and `openai-whisper` for the model
 
 The `ModelManager` ensures the heavy Whisper model is loaded only once and reused.
 
-::: src.stt.main
+::: ai_term.stt.main

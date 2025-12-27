@@ -18,7 +18,7 @@ Configuration is loaded from several sources in this order:
 The application supports dynamic configuration for different providers (LLM, TTS, STT).
 The schemas are defined in `PROVIDER_SCHEMAS`.
 
-::: src.cli.config.AppConfig
+::: ai_term.cli.config.AppConfig
     options:
       show_root_heading: true
 

@@ -15,8 +15,8 @@ The service listens on port `8002` by default. It supports a pluggable provider 
 
 ### Data Models
 
-::: src.tts.main.TTSRequest
-::: src.tts.main.ProviderConfigRequest
+::: ai_term.tts.main.TTSRequest
+::: ai_term.tts.main.ProviderConfigRequest
 
 ### Endpoints
 
@@ -25,7 +25,7 @@ The service listens on port `8002` by default. It supports a pluggable provider 
 
 ### Implementation
 
-::: src.tts.main
+::: ai_term.tts.main
     options:
       members:
         - generate_speech

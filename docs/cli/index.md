@@ -8,23 +8,23 @@ The CLI is built using [Textual](https://textual.textualize.io/), a TUI framewor
 
 ### Entry Point
 
-The application entry point is `src/cli/main.py`, which initializes the `ChatApp` class.
+The application entry point is `src/ai_term/cli/main.py`, which initializes the `ChatApp` class.
 
 ```python
-# src/cli/main.py
+# src/ai_term/cli/main.py
 def main():
     """Entry point for the CLI app."""
     app = ChatApp()
     app.run()
 ```
 
-## structure
+## Structure
 
-- **`src/cli/ui`**: Contains all UI components (Screens, Widgets, Styles).
-- **`src/cli/core`**: Contains business logic (Agent, Audio Client, MCP Manager).
-- **`src/cli/db`**: Database models and engine using `SQLAlchemy` and `aiosqlite`.
-- **`src/cli/config.py`**: Configuration management.
+- **`src/ai_term/cli/ui`**: Contains all UI components (Screens, Widgets, Styles).
+- **`src/ai_term/cli/core`**: Contains business logic (Agent, Audio Client, MCP Manager).
+- **`src/ai_term/cli/db`**: Database models and engine using `SQLAlchemy` and `aiosqlite`.
+- **`src/ai_term/cli/config.py`**: Configuration management.
 
 ## API Reference
 
-::: src.cli.main
+::: ai_term.cli.main

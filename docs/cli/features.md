@@ -8,20 +8,20 @@ The main screen is the **Chat Screen**. It mimics a standard messaging interface
 - **Sessions**: Multiple chat sessions support.
 - **Thinking Indicator**: Visual feedback while waiting for LLM.
 
-::: src.cli.ui.app.ChatApp
+::: ai_term.cli.ui.app.ChatApp
 
 ## Settings Screen
 
-The **Settings Screen** (`src.cli.ui.screens.settings`) is dynamically generated based on `AppConfig` and `PROVIDER_SCHEMAS`.
+The **Settings Screen** (`ai_term.cli.ui.screens.settings`) is dynamically generated based on `AppConfig` and `PROVIDER_SCHEMAS`.
 
 - **Dynamic Forms**: Fields change based on selected provider.
 - **Secret Management**: API keys are validated against environment variables.
 
-::: src.cli.ui.screens.settings.SettingsScreen
+::: ai_term.cli.ui.screens.settings.SettingsScreen
 
 ## Voice Interaction
 
 - **Speech Mode**: When enabled, valid AI responses are automatically spoken.
 - **Recording**: Hold `Space` (or configured key) to record voice input.
 
-::: src.cli.core.audio_recorder.AudioRecorder
+::: ai_term.cli.core.audio_recorder.AudioRecorder
