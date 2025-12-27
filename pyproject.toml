@@ -1,5 +1,5 @@
 [project]
-name = "ai-term"
+name = "py-aiterm"
 version = "0.1.0"
 description = "A modern, voice-enabled AI terminal assistant with local LLM integration and Model Context Protocol (MCP) support."
 readme = "README.md"
@@ -69,6 +69,9 @@ docs = [
     "mkdocs-mermaid2-plugin>=1.1.0",
     "mkdocstrings[python]>=0.25.0",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ai_term"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
