@@ -20,10 +20,10 @@ The easiest way to run AI-Term is using Docker Compose. This starts all necessar
 
 2. **Start the application:**
    ```bash
-   docker compose up --build
+   docker compose up -d --build
    ```
 
-   This will build the images and start the services. The CLI will be attached to your terminal.
+   This will build the images and start the support services. For more specialized Docker configurations (like GPU support), see the [Docker Guide](docker.md).
 
 ### Method 2: Local Installation
 
@@ -48,12 +48,12 @@ Open two separate terminal windows/tabs:
 
 **Terminal 1 (STT Service):**
 ```bash
-uv run uvicorn ai_term.stt.main:app --port 8001
+uv run uvicorn ai_term.stt.main:app --port 8901
 ```
 
 **Terminal 2 (TTS Service):**
 ```bash
-uv run uvicorn ai_term.tts.main:app --port 8002
+uv run uvicorn ai_term.tts.main:app --port 8902
 ```
 
 ### 2. Start the CLI

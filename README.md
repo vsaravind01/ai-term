@@ -38,16 +38,25 @@
 The application runs as a distributed system with a main CLI and two support microservices.
 
 ### 1. Start Support Services
-Open two separate terminal windows/tabs:
 
-**STT Service (Port 8001):**
+#### Option A: Docker (Recommended)
+If you have Docker installed, you can start the STT and TTS services with a single command:
+
 ```bash
-uv run uvicorn ai_term.stt.main:app --port 8001
+docker compose up -d --build
 ```
 
-**TTS Service (Port 8002):**
+#### Option B: Local Installation
+Open two separate terminal windows/tabs:
+
+**STT Service (Port 8901):**
 ```bash
-uv run uvicorn ai_term.tts.main:app --port 8002
+uv run uvicorn ai_term.stt.main:app --port 8901
+```
+
+**TTS Service (Port 8902):**
+```bash
+uv run uvicorn ai_term.tts.main:app --port 8902
 ```
 
 ### 2. Start the CLI
@@ -66,6 +75,7 @@ uv run mkdocs serve
 ```
 
 - [**Setup Guide**](docs/setup.md)
+- [**Docker Guide**](docs/docker.md)
 - [**CLI Documentation**](docs/cli/index.md)
 - [**API Reference**](docs/api.md)
 

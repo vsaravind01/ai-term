@@ -42,6 +42,7 @@ plugins:
 nav:
   - Home: index.md
   - Setup: setup.md
+  - Docker: docker.md
   - CLI:
     - Overview: cli/index.md
     - Configuration: cli/configuration.md
