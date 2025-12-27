@@ -2,7 +2,7 @@
 
 **AI-Term** is a voice-enabled terminal assistant that integrates LLMs (Large Language Models), Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful Command Line Interface (CLI) experience.
 
-![AI Term Banner](docs/img/banner.png)
+![AI Term Banner](https://github.com/vsaravind01/ai-term/blob/master/docs/img/banner.png?raw=true)
 
 ## Features
 
