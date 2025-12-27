@@ -44,8 +44,8 @@ class TestAudioConfig:
         """Verify default values for AudioConfig."""
         config = AudioConfig()
 
-        assert config.stt_url == "http://localhost:8001"
-        assert config.tts_url == "http://localhost:8002"
+        assert config.stt_url == "http://localhost:8901"
+        assert config.tts_url == "http://localhost:8902"
         assert config.speech_mode is False
 
     def test_custom_values(self):
