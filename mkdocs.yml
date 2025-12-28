@@ -27,9 +27,7 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-  font:
-    text: Roboto Mono
-    code: JetBrains Mono
+  font: false
 
 extra_css:
   - stylesheets/extra.css
