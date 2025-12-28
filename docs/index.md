@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="img/logo.svg" alt="ai_term logo" width="100" height="100" />
-</p>
-
-# ai_term
+<div style="display: flex; align-items: center; justify-content: center; margin-bottom: 2em;">
+  <img src="img/logo.svg" alt="ai_term logo" width="80" height="auto" style="margin-right: 20px;">
+  <h1 style="border-bottom: none; margin: 0;">ai_term</h1>
+</div>
 
 **ai_term** is an intelligent, voice-enabled terminal assistant that integrates LLMs, Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful CLI experience.
 
