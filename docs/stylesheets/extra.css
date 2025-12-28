@@ -146,6 +146,11 @@ h4:hover .headerlink {
   border: 1px solid var(--ai-border);
 }
 
+.highlight a {
+    text-decoration: none;
+    color: var(--ai-link);
+}
+
 .highlight .hll {
     background-color: var(--ai-cyan-dim);
 }
