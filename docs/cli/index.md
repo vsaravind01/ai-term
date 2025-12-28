@@ -1,6 +1,6 @@
 # CLI Documentation
 
-The CLI is the core interface of **AI Term**. It interacts with the users via text or voice, manages the chat history, and orchestrates calls to LLM, STT, and TTS services.
+The CLI is the core interface of **ai_term**. It interacts with the users via text or voice, manages the chat history, and orchestrates calls to LLM, STT, and TTS services.
 
 ## Overview
 

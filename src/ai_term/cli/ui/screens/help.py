@@ -8,7 +8,7 @@ from textual.widgets import Button, Link, Markdown
 HELLO_MARKDOWN = """
 # **`Hello!`**
 
-This is **`AI Term`**, a command-line interface for interacting with AI Assistants.
+This is **`ai_term`**, a command-line interface for interacting with AI Assistants.
 Think of it like Claude Desktop, but for the command line 💻
 Feel free to open an issue on GitHub if you have any questions or feedback or even
 would like to contribute!

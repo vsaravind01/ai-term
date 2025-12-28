@@ -13,4 +13,4 @@ SEPARATOR = " | "
 BORDER_TITLE_PREFIX = "Session: "
 
 # App Metadata
-APP_TITLE = "AI Term"
+APP_TITLE = "ai_term"

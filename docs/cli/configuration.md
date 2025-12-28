@@ -1,6 +1,6 @@
 # Configuration
 
-AI Term uses a robust configuration system based on `pydantic-settings`.
+ai_term uses a robust configuration system based on `pydantic-settings`.
 
 ## AppConfig
 
