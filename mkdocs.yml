@@ -32,7 +32,11 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
+
 markdown_extensions:
+  - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -49,7 +53,6 @@ markdown_extensions:
 
 plugins:
   - search
-  - mermaid2
   - mkdocstrings:
       handlers:
         python:
