@@ -17,6 +17,6 @@ The service uses `fastapi` for the web server and `openai-whisper` for the model
 
 ### Model Management
 
-The `ModelManager` ensures the heavy Whisper model is loaded only once and reused.
+The `ModelManager` ensures the heavy Whisper model is loaded only once and reused. It also unloads the model when the services are not used for a while (default 5 minutes) to free up resources.
 
 ::: ai_term.stt.main

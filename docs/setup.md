@@ -10,6 +10,9 @@
 
 ### Method 1: Docker (Recommended)
 
+!!! tip "Recommended"
+    Using Docker is strongly recommended. It bundles the required STT and TTS services without manual configuration.
+
 The easiest way to run ai_term is using the built-in CLI commands.
 
 1. **Install ai_term:**
@@ -24,6 +27,9 @@ The easiest way to run ai_term is using the built-in CLI commands.
 
    This pulls pre-built Docker images and starts the STT/TTS services.
 
+   !!! warning "Initial Startup"
+       The first time you run this command, it may take several minutes to download the large Docker images (approx 3-5GB per image).
+
 3. **Verify services are running:**
    ```bash
    ai-term status
@@ -34,6 +40,9 @@ The easiest way to run ai_term is using the built-in CLI commands.
 ### Method 2: Local Installation
 
 If you prefer to run locally without Docker:
+
+!!! info "Virtual Environment"
+    It is highly recommended to use a virtual environment (`venv`, `uv`, or `conda`) to avoid conflicting with system packages.
 
 1. **Install dependencies:**
    Using `uv` (recommended):
@@ -48,6 +57,9 @@ If you prefer to run locally without Docker:
 ## Running the Application
 
 If you are not using Docker, you need to run the services manually.
+
+!!! warning "Voice Features Requirement"
+    If you do not start the support services below, the Voice Mode (TTS/STT) will **fail**. The main chat interface will still work for text-only interactions.
 
 ### 1. Start Support Services
 Open two separate terminal windows/tabs:

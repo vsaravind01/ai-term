@@ -1,8 +1,8 @@
 site_name: ai_term
 site_description: AI Terminal Assistant Documentation
-site_url: https://vsaravind01.me/ai-term/
-repo_url: https://github.com/vsaravind01/ai-term
+site_url: https://vsaravind.me/ai-term
 repo_name: ai-term
+repo_url: https://github.com/vsaravind01/ai-term
 
 theme:
   name: material
@@ -14,6 +14,8 @@ theme:
     - navigation.expand
     - content.code.copy
     - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github-alt
   palette:
     - scheme: slate
       primary: black
@@ -28,6 +30,17 @@ theme:
         icon: material/brightness-7
         name: Switch to dark mode
   font: false
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/vsaravind01/ai-term
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/vsaravind01
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/vsaravind01
+    - icon: fontawesome/solid/globe
+      link: https://vsaravind.me
 
 extra_css:
   - stylesheets/extra.css
@@ -48,8 +61,11 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - abbr:
+  - tables:
   - toc:
       permalink: "#"
+  - admonition
 
 plugins:
   - search

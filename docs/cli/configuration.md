@@ -13,6 +13,9 @@ Configuration is loaded from several sources in this order:
 2. `.env` file (if configured)
 3. Internal `env` dictionary in `config.json`
 
+!!! danger "Security Warning"
+    **NEVER** commit your `.env` file to version control (Git). It contains sensitive API keys. Ensure it is added to your `.gitignore`.
+
 ### Provider Schemas
 
 The application supports dynamic configuration for different providers (LLM, TTS, STT).

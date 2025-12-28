@@ -23,5 +23,8 @@ The **Settings Screen** (`ai_term.cli.ui.screens.settings`) is dynamically gener
 
 - **Speech Mode**: When enabled, valid AI responses are automatically spoken.
 - **Recording**: Hold `Space` (or configured key) to record voice input.
+ 
+ !!! warning "Microphone Access"
+     On few operating systems (especially macOS), you must explicitly grant your terminal application permission to access the Microphone. If recording fails immediately, check your System Privacy settings.
 
 ::: ai_term.cli.core.audio_recorder.AudioRecorder
