@@ -1,0 +1,122 @@
+graph TD
+    %% User and Hardware
+    User((User))
+    Mic[Microphone]
+    Speaker[Speakers]
+
+    %% Client Application
+    subgraph Client ["Terminal Environment"]
+        direction TB
+
+        %% UI Components
+        subgraph UI [Textual UI Layer]
+            direction TB
+            App[ChatApp]
+            
+            subgraph Screens [Screens]
+                ChatScreen[Chat Screen]
+                SettingsScreen[Settings Screen]
+                HelpScreen[Help Screen]
+                ChatScreen -.-> |Switch| SettingsScreen
+                ChatScreen -.-> |Switch| HelpScreen
+            end
+            
+            App --> Screens
+        end
+
+        %% Core Logic Components
+        subgraph Core [Core Logic]
+            direction TB
+            Agent[ChatAgent]
+            Config[Config Manager]
+            MCP[MCP Manager]
+            
+            Agent <--> |System Prompt| Config
+            Agent <--> |Tools| MCP
+        end
+
+        %% I/O Components
+        subgraph IO [I/O Adapters]
+            direction TB
+            AudioClient[Audio Client]
+            Recorder[Audio Recorder]
+            Player[Audio Player]
+            DBClient[DB Engine]
+        end
+
+        %% Local Data Storage
+        subgraph Persistence [Data Persistence]
+            LocalDB[(SQLite DB)]
+            SessionModel[Session Model]
+            MessageModel[Message Model]
+            
+            LocalDB --- SessionModel
+            LocalDB --- MessageModel
+        end
+    end
+
+    %% Microservices
+    subgraph Services [Local Docker Microservices]
+        direction TB
+        
+        subgraph STT_Service [STT Service]
+            WhisperModel[Whisper Model]
+            STTAPI[FastAPI Endpoint]
+            STTAPI --> WhisperModel
+        end
+
+        subgraph TTS_Service [TTS Service]
+            TTSAPI[FastAPI Endpoint]
+            CoquiProvider[Coqui Provider]
+            ElevenLabsProvider[ElevenLabs Provider]
+            
+            TTSAPI --> CoquiProvider
+            TTSAPI --> ElevenLabsProvider
+        end
+    end
+
+    %% External Systems
+    subgraph External [External Providers]
+        Ollama[Ollama LLM]
+        ElevenLabsAPI[ElevenLabs API]
+        MCPServers[External MCP Servers]
+    end
+
+    %% Connections
+    
+    %% User to Hardware/UI
+    User <--> |Text Input| ChatScreen
+    User --> |Voice| Mic
+    Speaker --> |Audio| User
+
+    %% Hardware to Audio Adapters
+    Mic --> |Raw Audio| Recorder
+    Recorder --> |Bytes| App
+    App --> |Bytes| Player
+    Player --> |Audio| Speaker
+
+    %% App to Logic
+    App <--> |Events| Agent
+    App <--> |Load/Save| Config
+    
+    %% App to UI
+    App -- Manage --> Screens
+
+    %% App to I/O
+    App --> |Transcribe| AudioClient
+    App --> |Speak| AudioClient
+    App <--> |Query/Save| DBClient
+
+    %% IO to Services
+    AudioClient <--> |POST /transcribe| STTAPI
+    AudioClient <--> |POST /generate| TTSAPI
+
+    %% IO to DB
+    DBClient <--> |SQLAlchemy| LocalDB
+
+    %% Logic to External
+    Agent <--> |Chat Completions| Ollama
+    MCP <--> |JSON-RPC| MCPServers
+
+    %% Services to External
+    ElevenLabsProvider <--> |API Request| ElevenLabsAPI
