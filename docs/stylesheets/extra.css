@@ -31,24 +31,29 @@
   --ai-scrollbar-thumb-hover: #555;
 }
 
-/* Light Mode Theme (Default / Light IDE) */
+/* Light Mode Theme (Hybrid: Dark Header + Light Body) */
 [data-md-color-scheme="default"] {
-  --ai-bg-header: #ffffff;
-  --ai-bg-tabs: #ffffff;
+  /* Header/Tabs remain Dark for branding & contrast */
+  --ai-bg-header: #050505; 
+  --ai-bg-tabs: #050505;
   --ai-border: #e0e0e0;
-  --ai-text-h2: #24292e; /* GitHub Dark Gray */
-  --ai-border-h2: rgba(0, 0, 0, 0.1);
-  --ai-link: #0366d6; /* GitHub Blue */
-  --ai-bg-code: #f6f8fa; /* GitHub Light Gray */
-  --ai-bg-admonition: #f1f8ff;
-  --ai-scrollbar-track: #f0f0f0;
-  --ai-scrollbar-thumb: #c1c1c1;
-  --ai-scrollbar-thumb-hover: #a8a8a8;
   
-  /* Adjust Brand Colors for Light Mode visibility */
-  --ai-purple: #8a63d2; /* Darker purple for visibility on white */
-  --ai-cyan: #0097a7;   /* Darker cyan for visibility on white */
-  --ai-gradient: linear-gradient(135deg, #6200ea, #00acc1);
+  /* Content Colors */
+  --ai-text-h2: #1a1a1a; /* Nearly black for headers */
+  --ai-border-h2: rgba(0, 0, 0, 0.1);
+  --ai-link: #2563eb; /* High-contrast Blue */
+  
+  /* Code & Boxes */
+  --ai-bg-code: #f1f3f5;
+  --ai-bg-admonition: #f8f9fa;
+  --ai-scrollbar-track: #f0f0f0;
+  --ai-scrollbar-thumb: #ced4da;
+  --ai-scrollbar-thumb-hover: #adb5bd;
+  
+  /* Brand Colors adapted for Light Mode */
+  --ai-purple: #7c3aed; /* Vivid Purple */
+  --ai-cyan: #0891b2;   /* Vivid Cyan */
+  --ai-gradient: linear-gradient(135deg, #7c3aed, #0891b2);
 }
 
 /* Header Styling */
