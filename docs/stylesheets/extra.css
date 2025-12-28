@@ -56,10 +56,35 @@
   filter: drop-shadow(0 0 15px rgba(201, 180, 255, 0.3));
 }
 
-.md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+.md-typeset h2 {
     font-family: 'Geist Mono', monospace, sans-serif;
     font-weight: 700;
     margin-top: 2em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 0.3em;
+    color: #f4f4f4; /* Brighter than body text */
+}
+
+.md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+    font-family: 'Geist Mono', monospace, sans-serif;
+    font-weight: 700;
+    margin-top: 2em;
+}
+
+/* Anchor Link Styling */
+.headerlink {
+    color: var(--ai-cyan) !important;
+    opacity: 0;
+    transition: opacity 0.2s;
+    margin-left: 0.5rem;
+    text-decoration: none;
+}
+
+h1:hover .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink {
+    opacity: 1;
 }
 
 /* Code Blocks - Terminal Look */
