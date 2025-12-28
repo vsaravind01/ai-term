@@ -43,6 +43,16 @@
   color: var(--ai-cyan) !important;
 }
 
+/* Link Styling */
+.md-typeset a {
+  color: #ffffff;
+  transition: color 0.2s;
+}
+
+.md-typeset a:hover {
+  color: var(--ai-cyan);
+}
+
 /* Content Typography */
 .md-typeset h1 {
   font-family: 'Geist Mono', monospace, sans-serif;
