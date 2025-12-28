@@ -17,13 +17,19 @@ theme:
   icon:
     repo: fontawesome/brands/github-alt
   palette:
-    - scheme: slate
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: black
       accent: cyan
       toggle:
         icon: material/brightness-4
-        name: Switch to light mode
-    - scheme: default
+        name: Switch to system preference
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: black
       accent: cyan
       toggle:

@@ -1,5 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/geist-mono');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap');
 
 :root {
   /* Fonts */
@@ -11,6 +11,8 @@
   --ai-cyan: #8DECF7;
   --ai-purple-dim: rgba(201, 180, 255, 0.1);
   --ai-cyan-dim: rgba(141, 236, 247, 0.1);
+  --ai-search-background: #0b0f14;
+  --ai-search-text: #a8b4c5;
   
   /* Gradient for text/elements */
   --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-cyan));
@@ -37,7 +39,7 @@
   /* Header/Tabs remain Dark for branding & contrast */
   --ai-bg-header: #050505; 
   --ai-bg-tabs: #050505;
-  --ai-border: #e0e0e0;
+  --ai-border: #222;
   
   /* Content Colors */
   --ai-text-h2: #1a1a1a; /* Nearly black for headers */
@@ -59,11 +61,18 @@
 
 /* Input field Styling */
 input[type="text"] {
-  background-color: var(--ai-bg-code);
+  background-color: var(--ai-search-background);
+  color: var(--ai-search-text);
 }
 
 input[type="text"]:hover:not(:focus) {
   background-color: var(--ai-bg-code-hover);
+  color: var(--ai-search-text);
+}
+
+input[type="text"]:focus {
+  background-color: var(--ai-bg-code-hover);
+  color: var(--ai-search-text);
 }
 
 /* Header Styling */
@@ -176,6 +185,7 @@ h4:hover .headerlink {
 
 /* Code Blocks - Terminal Look */
 .md-code {
+  font-weight: 700;
   border-radius: 8px;
   background-color: var(--ai-bg-code) !important;
   border: 1px solid var(--ai-border);

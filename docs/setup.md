@@ -27,8 +27,8 @@ The easiest way to run ai_term is using the built-in CLI commands.
 
    This pulls pre-built Docker images and starts the STT/TTS services.
 
-   !!! warning "Initial Startup"
-       The first time you run this command, it may take several minutes to download the large Docker images (approx 3-5GB per image).
+!!! warning "Initial Startup"
+      The first time you run this command, it may take several minutes to download the large Docker images (approx 3-5GB per image).
 
 3. **Verify services are running:**
    ```bash
