@@ -1,8 +1,12 @@
-# AI Term
+<p align="center">
+  <img src="img/logo.svg" alt="ai_term logo" width="100" height="100" />
+</p>
 
-**AI Term** is an intelligent, voice-enabled terminal assistant that integrates LLMs, Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful CLI experience.
+# ai_term
 
-![AI Term Chat Screenshot](img/sample-screenshot-chat.png)
+**ai_term** is an intelligent, voice-enabled terminal assistant that integrates LLMs, Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful CLI experience.
+
+![ai_term Chat Screenshot](img/sample-screenshot-chat.png)
 
 ## Features
 
@@ -14,7 +18,7 @@
 
 ## Getting Started
 
-Check out the [Setup Guide](setup.md) to install and configure AI Term.
+Check out the [Setup Guide](setup.md) to install and configure **ai_term**.
 
 ## Architecture
 
