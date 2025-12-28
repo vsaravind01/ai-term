@@ -6,6 +6,8 @@ repo_name: ai-term
 
 theme:
   name: material
+  logo: img/logo.svg
+  favicon: img/logo.svg
   features:
     - navigation.tabs
     - navigation.sections
