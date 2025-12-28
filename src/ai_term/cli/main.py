@@ -41,6 +41,7 @@ def get_compose_file_path() -> str:
     """Get the path to the bundled docker-compose.yml file."""
     try:
         from importlib.resources import files
+
         resource_path = files("ai_term.cli.resources").joinpath("docker-compose.yml")
         # For Python 3.9+, we can use as_file for a context manager
         # but for simplicity, we'll convert to string path
@@ -58,7 +59,7 @@ def get_compose_file_path() -> str:
 def main(ctx: typer.Context):
     """
     AI-Term CLI Entry Point.
-    
+
     Runs the main TUI application by default.
     Use 'start' to run background services.
     Use 'status' to check service status.
@@ -77,32 +78,26 @@ def main(ctx: typer.Context):
 @app.command()
 def start(
     build: Annotated[
-        bool, 
-        typer.Option("--build", help="Force rebuild of Docker images.")
+        bool, typer.Option("--build", help="Force rebuild of Docker images.")
     ] = False,
     detach: Annotated[
-        bool, 
-        typer.Option("--detach", "-d", help="Run in detached mode.")
-    ] = True
+        bool, typer.Option("--detach", "-d", help="Run in detached mode.")
+    ] = True,
 ):
     """
     Start the backend services (STT/TTS) using Docker Compose.
-    
+
     Uses the bundled docker-compose.yml file automatically.
     Pass --build to force rebuild of images.
     """
     if not check_docker_compose():
-        typer.secho(
-            "Error: 'docker compose' is not available.", 
-            fg=typer.colors.RED
-        )
+        typer.secho("Error: 'docker compose' is not available.", fg=typer.colors.RED)
         raise typer.Exit(code=1)
 
     compose_file = get_compose_file_path()
     if not compose_file:
         typer.secho(
-            "Error: Could not locate docker-compose.yml file.",
-            fg=typer.colors.RED
+            "Error: Could not locate docker-compose.yml file.", fg=typer.colors.RED
         )
         raise typer.Exit(code=1)
 
@@ -112,7 +107,7 @@ def start(
 
     if build:
         cmd.append("--build")
-    
+
     typer.echo("Starting services...")
     try:
         subprocess.run(cmd, check=True)
@@ -128,17 +123,13 @@ def status():
     Check the status of backend services.
     """
     if not check_docker_compose():
-        typer.secho(
-            "Error: 'docker compose' is not available.", 
-            fg=typer.colors.RED
-        )
+        typer.secho("Error: 'docker compose' is not available.", fg=typer.colors.RED)
         raise typer.Exit(code=1)
 
     compose_file = get_compose_file_path()
     if not compose_file:
         typer.secho(
-            "Error: Could not locate docker-compose.yml file.",
-            fg=typer.colors.RED
+            "Error: Could not locate docker-compose.yml file.", fg=typer.colors.RED
         )
         raise typer.Exit(code=1)
 
@@ -147,9 +138,9 @@ def status():
             ["docker", "compose", "-f", compose_file, "ps", "--format", "json"],
             check=True,
             capture_output=True,
-            text=True
+            text=True,
         )
-        
+
         # Parse JSON output (one JSON object per line)
         services = []
         for line in result.stdout.strip().split("\n"):
@@ -176,7 +167,7 @@ def status():
             name = service.get("Service", "Unknown")
             state = service.get("State", "Unknown")
             status = service.get("Status", "Unknown")
-            
+
             # Format ports
             ports = service.get("Publishers", [])
             port_str = ""
@@ -184,28 +175,23 @@ def status():
                 port_list = []
                 for p in ports:
                     if isinstance(p, dict):
-                         # Handle list of dicts format from newer docker compose versions
-                         url = p.get("URL", "0.0.0.0")
-                         pub_port = p.get("PublishedPort", "")
-                         target_port = p.get("TargetPort", "")
-                         if pub_port:
-                             port_list.append(
-                                 f"{url}:{pub_port}->{target_port}"
-                             )
+                        # Handle list of dicts format from newer docker compose versions
+                        url = p.get("URL", "0.0.0.0")
+                        pub_port = p.get("PublishedPort", "")
+                        target_port = p.get("TargetPort", "")
+                        if pub_port:
+                            port_list.append(f"{url}:{pub_port}->{target_port}")
                 port_str = ", ".join(port_list)
-            
+
             # Fallback for older formats or if Publishers structure is different
             if not port_str:
-                 port_str = service.get("Ports", "")
+                port_str = service.get("Ports", "")
 
             # Colorize state
             state_style = "green" if state.lower() == "running" else "red"
-            
+
             table.add_row(
-                name,
-                f"[{state_style}]{state}[/{state_style}]",
-                status,
-                port_str
+                name, f"[{state_style}]{state}[/{state_style}]", status, port_str
             )
 
         console.print(table)
@@ -214,8 +200,8 @@ def status():
         typer.secho("Failed to check status. Is docker running?", fg=typer.colors.RED)
         raise typer.Exit(code=1)
     except Exception as e:
-         typer.secho(f"An unexpected error occurred: {e}", fg=typer.colors.RED)
-         raise typer.Exit(code=1)
+        typer.secho(f"An unexpected error occurred: {e}", fg=typer.colors.RED)
+        raise typer.Exit(code=1)
 
 
 if __name__ == "__main__":
