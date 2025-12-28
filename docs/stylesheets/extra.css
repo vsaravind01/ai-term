@@ -9,103 +9,88 @@
   /* Brand Colors from Logo */
   --ai-purple: #C9B4FF;
   --ai-cyan: #8DECF7;
+  --ai-purple-dim: rgba(201, 180, 255, 0.1);
+  --ai-cyan-dim: rgba(141, 236, 247, 0.1);
   
-  /* Shared Defaults */
+  /* Gradient for text/elements */
   --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-cyan));
 }
 
-/* Dark Mode (Slate) Overrides */
+/* Dark Mode Theme (Slate) */
 [data-md-color-scheme="slate"] {
-  --ai-bg-color: #000000;
-  --ai-text-header: #f4f4f4;
-  --ai-text-body: #e0e0e0;
-  --ai-link-color: #ffffff;
-  --ai-link-hover: var(--ai-cyan);
-  --ai-border-color: rgba(255, 255, 255, 0.15);
-  --ai-header-bg: #000000;
-  --ai-code-bg: #0b0f14;
-  --ai-purple-dim: rgba(201, 180, 255, 0.1);
-  --ai-cyan-dim: rgba(141, 236, 247, 0.1);
+  --ai-bg-header: #000000;
+  --ai-bg-tabs: #000000;
+  --ai-border: #222;
+  --ai-text-h2: #f4f4f4;
+  --ai-border-h2: rgba(255, 255, 255, 0.15);
+  --ai-link: #ffffff;
+  --ai-bg-code: #0b0f14;
+  --ai-bg-admonition: rgba(141, 236, 247, 0.05);
+  --ai-scrollbar-track: #000;
+  --ai-scrollbar-thumb: #333;
+  --ai-scrollbar-thumb-hover: #555;
 }
 
-/* Light Mode (Default) Overrides */
+/* Light Mode Theme (Default / Light IDE) */
 [data-md-color-scheme="default"] {
-  /* Pale light pastel magenta background */
-  --ai-bg-color: #FDF5F9; 
-  --ai-text-header: #2c2c2c;
-  --ai-text-body: #333333;
-  --ai-link-color: #5D3FD3; /* Deep purple for links in light mode */
-  --ai-link-hover: #9b2c2c;
-  --ai-border-color: rgba(0, 0, 0, 0.1);
-  --ai-header-bg: #FDF5F9; /* Match body bg */
-  --ai-code-bg: #f4ebf1;
-  --ai-purple-dim: rgba(93, 63, 211, 0.1);
-  --ai-cyan-dim: rgba(0, 150, 136, 0.1);
+  --ai-bg-header: #ffffff;
+  --ai-bg-tabs: #ffffff;
+  --ai-border: #e0e0e0;
+  --ai-text-h2: #24292e; /* GitHub Dark Gray */
+  --ai-border-h2: rgba(0, 0, 0, 0.1);
+  --ai-link: #0366d6; /* GitHub Blue */
+  --ai-bg-code: #f6f8fa; /* GitHub Light Gray */
+  --ai-bg-admonition: #f1f8ff;
+  --ai-scrollbar-track: #f0f0f0;
+  --ai-scrollbar-thumb: #c1c1c1;
+  --ai-scrollbar-thumb-hover: #a8a8a8;
   
-  /* Override gradient for better visibility on light */
-  --ai-gradient: linear-gradient(135deg, #6a1b9a, #00838f);
-}
-
-/* Apply Backgrounds */
-body {
-    background-color: var(--ai-bg-color) !important;
-}
-
-.md-main {
-    background-color: var(--ai-bg-color) !important;
+  /* Adjust Brand Colors for Light Mode visibility */
+  --ai-purple: #8a63d2; /* Darker purple for visibility on white */
+  --ai-cyan: #0097a7;   /* Darker cyan for visibility on white */
+  --ai-gradient: linear-gradient(135deg, #6200ea, #00acc1);
 }
 
 /* Header Styling */
 .md-header {
-  background-color: var(--ai-header-bg) !important;
-  border-bottom: 1px solid var(--ai-border-color);
-  color: var(--ai-text-header) !important;
+  background-color: var(--ai-bg-header) !important;
+  border-bottom: 1px solid var(--ai-border);
 }
 
 .md-header__title {
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--ai-text-header) !important;
-}
-
-.md-header__button {
-    color: var(--ai-text-header) !important;
+  color: inherit; /* Inherit color from theme */
 }
 
 /* Tabs Navigation */
 .md-tabs {
-  background-color: var(--ai-header-bg) !important;
-  border-bottom: 1px solid var(--ai-border-color);
-  color: var(--ai-text-header) !important;
+  background-color: var(--ai-bg-tabs) !important;
+  border-bottom: 1px solid var(--ai-border);
 }
 
 .md-tabs__link {
   opacity: 0.7;
   transition: opacity 0.2s, color 0.2s;
-  color: var(--ai-text-header) !important;
 }
 
 .md-tabs__link:hover, .md-tabs__link--active {
   opacity: 1;
-  color: var(--ai-link-hover) !important;
+  color: var(--ai-cyan) !important;
 }
 
 /* Link Styling */
 .md-typeset a {
-  color: var(--ai-link-color);
+  color: var(--ai-link);
   transition: color 0.2s;
   text-decoration: underline;
 }
 
 .md-typeset a:hover {
-  color: var(--ai-link-hover);
+  color: var(--ai-cyan);
 }
 
 /* Content Typography */
-.md-typeset {
-    color: var(--ai-text-body);
-}
-
 .md-typeset h1 {
   font-family: 'Geist Mono', monospace, sans-serif;
   font-weight: 800;
@@ -115,29 +100,27 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
-  /* Adjust glow for light mode visibility?? Or just keep it subtle */
-  filter: drop-shadow(0 0 15px var(--ai-purple-dim));
+  filter: drop-shadow(0 0 15px rgba(201, 180, 255, 0.3));
 }
 
 .md-typeset h2 {
     font-family: 'Geist Mono', monospace, sans-serif;
     font-weight: 700;
     margin-top: 2em;
-    border-bottom: 1px solid var(--ai-border-color);
+    border-bottom: 1px solid var(--ai-border-h2);
     padding-bottom: 0.3em;
-    color: var(--ai-text-header);
+    color: var(--ai-text-h2);
 }
 
 .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
     font-family: 'Geist Mono', monospace, sans-serif;
     font-weight: 700;
     margin-top: 2em;
-    color: var(--ai-text-header);
 }
 
 /* Anchor Link Styling */
 .headerlink {
-    color: var(--ai-link-hover) !important;
+    color: var(--ai-cyan) !important;
     opacity: 0;
     transition: opacity 0.2s;
     margin-left: 0.5rem;
@@ -154,13 +137,8 @@ h4:hover .headerlink {
 /* Code Blocks - Terminal Look */
 .md-code {
   border-radius: 8px;
-  background-color: var(--ai-code-bg) !important;
-  border: 1px solid var(--ai-border-color);
-}
-
-.md-code code {
-    background-color: var(--ai-code-bg) !important;
-    color: var(--ai-text-body);
+  background-color: var(--ai-bg-code) !important;
+  border: 1px solid var(--ai-border);
 }
 
 .highlight .hll {
@@ -170,20 +148,19 @@ h4:hover .headerlink {
 /* Admonitions */
 .md-typeset .admonition {
   border-radius: 8px;
-  border: 1px solid var(--ai-border-color);
-  background-color: var(--ai-bg-color); /* Fallback */
+  border: 1px solid var(--ai-border);
 }
 
 .md-typeset .admonition.note,
 .md-typeset .admonition.info {
-  border-color: var(--ai-link-hover);
-  background-color: var(--ai-cyan-dim);
+  border-color: var(--ai-cyan);
+  background-color: var(--ai-bg-admonition);
 }
 
 /* Buttons */
 .md-button--primary {
   background: var(--ai-gradient) !important;
-  color: #fff !important;
+  color: #fff !important; /* Always white text on gradient button */
   font-weight: 700;
   border: none;
 }
@@ -199,14 +176,14 @@ h4:hover .headerlink {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--ai-bg-color);
+  background: var(--ai-scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--ai-border-color);
+  background: var(--ai-scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--ai-link-hover);
+  background: var(--ai-scrollbar-thumb-hover);
 }
