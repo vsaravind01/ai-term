@@ -8,15 +8,31 @@ The CLI is built using [Textual](https://textual.textualize.io/), a TUI framewor
 
 ### Entry Point
 
-The application entry point is `src/ai_term/cli/main.py`, which initializes the `ChatApp` class.
+The application uses [Typer](https://typer.tiangolo.com/) for its CLI interface. The main entry point is `src/ai_term/cli/main.py`.
 
-```python
-# src/ai_term/cli/main.py
-def main():
-    """Entry point for the CLI app."""
-    app = ChatApp()
-    app.run()
+```bash
+# Start the TUI application (default)
+ai-term
+
+# Start background services
+ai-term start
+
+# Check service status
+ai-term status
 ```
+
+## Commands
+
+### `ai-term` (default)
+Launches the full-screen terminal user interface for chatting with the AI.
+
+### `ai-term start`
+Starts the Docker-based STT and TTS services.
+- `--build`: Force rebuild of Docker images.
+- `--detach` / `-d`: Run in detached mode (default).
+
+### `ai-term status`
+Displays a formatted table showing the current state and port mappings of the backend services.
 
 ## Structure
 

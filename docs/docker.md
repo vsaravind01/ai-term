@@ -1,46 +1,63 @@
 # Docker Guide
 
-ai_term supports Docker for ease of deployment. This guide covers how to use Docker to run the STT (Speech-to-Text) and TTS (Text-to-Speech) services.
+ai_term uses Docker to run the STT (Speech-to-Text) and TTS (Text-to-Speech) backend services.
 
-## Overview
+## Pre-built Images
 
-The `docker-compose.yml` file in the root directory defines two services:
-- **`stt`**: Whisper-based transcription service.
-- **`tts`**: Coqui-based speech synthesis service.
+Official Docker images are available on GitHub Container Registry:
+
+| Service | Image |
+|---------|-------|
+| STT | `ghcr.io/vsaravind01/ai-term-stt:latest` |
+| TTS | `ghcr.io/vsaravind01/ai-term-tts:latest` |
 
 ## Quick Start
 
+The easiest way to start the services is using the built-in CLI command:
+
 ```bash
-docker compose up -d --build
+ai-term start
 ```
 
-This will:
-1. Build the images for both services.
-2. Map the services to the following ports:
-    - STT: `http://localhost:8901`
-    - TTS: `http://localhost:8902`
-3. Mount local volumes for model caching to avoid re-downloading large models on every restart.
+This pulls the pre-built images and starts both services in the background.
+
+To check the status of running services:
+
+```bash
+ai-term status
+```
 
 ## Port Configuration
-
-By default, we use unique ports to avoid conflicts with other local services:
 
 | Service | Container Port | Host Port |
 |---------|----------------|-----------|
 | STT     | 8001           | 8901      |
 | TTS     | 8002           | 8902      |
 
-You can customize these in `docker-compose.yml`.
+## Manual Docker Compose
+
+If you prefer to run Docker Compose directly:
+
+```bash
+docker compose up -d
+```
+
+To force rebuild of images:
+
+```bash
+ai-term start --build
+```
 
 ## Volumes and Caching
 
 To speed up startup, the services mount local cache directories:
+
 - **Whisper Models**: `~/.cache/whisper` -> `/root/.cache/whisper`
 - **TTS Models**: `~/.local/share/tts` -> `/root/.local/share/tts`
 
 ## GPU Support
 
-If you have an NVIDIA GPU, you can enable hardware acceleration by modifying the `Dockerfile` and `docker-compose.yml` to use CUDA-enabled base images (e.g., `pytorch/pytorch`).
+If you have an NVIDIA GPU, you can enable hardware acceleration by modifying the `Dockerfile` and `docker-compose.yml` to use CUDA-enabled base images.
 
 > [!NOTE]
-> The default setup uses CPU for maximum compatibility. Performance will depend on your CPU's speed.
+> The default setup uses CPU for maximum compatibility.

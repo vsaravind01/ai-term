@@ -10,20 +10,26 @@
 
 ### Method 1: Docker (Recommended)
 
-The easiest way to run ai_term is using Docker Compose. This starts all necessary services (CLI, STT, TTS) automatically.
+The easiest way to run ai_term is using the built-in CLI commands.
 
-1. **Clone the repository:**
+1. **Install ai_term:**
    ```bash
-   git clone https://github.com/vsaravind01/ai-term.git
-   cd ai-term
+   pip install py-aiterm
    ```
 
-2. **Start the application:**
+2. **Start the services:**
    ```bash
-   docker compose up -d --build
+   ai-term start
    ```
 
-   This will build the images and start the support services. For more specialized Docker configurations (like GPU support), see the [Docker Guide](docker.md).
+   This pulls pre-built Docker images and starts the STT/TTS services.
+
+3. **Verify services are running:**
+   ```bash
+   ai-term status
+   ```
+
+   For more Docker configurations, see the [Docker Guide](docker.md).
 
 ### Method 2: Local Installation
 

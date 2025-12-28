@@ -2,6 +2,7 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/py-aiterm.svg)](https://pypi.org/project/py-aiterm/)
 [![Docs Deployment](https://github.com/vsaravind01/ai-term/actions/workflows/deploy_docs.yml/badge.svg)](https://github.com/vsaravind01/ai-term/actions/workflows/deploy_docs.yml)
+[![Docker Images](https://github.com/vsaravind01/ai-term/actions/workflows/docker_images.yml/badge.svg)](https://github.com/vsaravind01/ai-term/actions/workflows/docker_images.yml)
 
 **ai_term** is an open-source, voice-enabled terminal assistant that integrates LLMs (Large Language Models), Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful Command Line Interface (CLI) experience.
 
@@ -48,14 +49,13 @@ The application runs as a distributed system with a main CLI and two support mic
 
 ### 1. Start Support Services
 
-### 1. Start Support Services
 Run the following command to start the STT and TTS services in the background:
 
 ```bash
 ai-term start
 ```
 
-This will automatically build the required Docker images (if missing) and start the containers.
+This pulls pre-built Docker images from GHCR and starts the services.
 
 ### 2. Check Status (Optional)
 You can verify the services are running with:
