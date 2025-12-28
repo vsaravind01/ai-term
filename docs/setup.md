@@ -10,7 +10,7 @@
 
 ### Method 1: Docker (Recommended)
 
-The easiest way to run AI-Term is using Docker Compose. This starts all necessary services (CLI, STT, TTS) automatically.
+The easiest way to run ai_term is using Docker Compose. This starts all necessary services (CLI, STT, TTS) automatically.
 
 1. **Clone the repository:**
    ```bash

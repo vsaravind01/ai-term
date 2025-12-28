@@ -1,8 +1,9 @@
-# AI-Term
+# ai_term
 
 [![PyPI version](https://img.shields.io/pypi/v/py-aiterm.svg)](https://pypi.org/project/py-aiterm/)
+[![Docs Deployment](https://github.com/vsaravind01/ai-term/actions/workflows/deploy_docs.yml/badge.svg)](https://github.com/vsaravind01/ai-term/actions/workflows/deploy_docs.yml)
 
-**AI-Term** is an open-source, voice-enabled terminal assistant that integrates LLMs (Large Language Models), Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful Command Line Interface (CLI) experience.
+**ai_term** is an open-source, voice-enabled terminal assistant that integrates LLMs (Large Language Models), Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful Command Line Interface (CLI) experience.
 
 ![ai_term Banner](https://github.com/vsaravind01/ai-term/blob/master/docs/img/banner.png?raw=true)
 
@@ -47,27 +48,23 @@ The application runs as a distributed system with a main CLI and two support mic
 
 ### 1. Start Support Services
 
-#### Option A: Docker (Recommended)
-If you have Docker installed, you can start the STT and TTS services with a single command:
+### 1. Start Support Services
+Run the following command to start the STT and TTS services in the background:
 
 ```bash
-docker compose up -d --build
+ai-term start
 ```
 
-#### Option B: Local Installation
-Open two separate terminal windows/tabs:
+This will automatically build the required Docker images (if missing) and start the containers.
 
-**STT Service (Port 8901):**
+### 2. Check Status (Optional)
+You can verify the services are running with:
+
 ```bash
-uv run uvicorn ai_term.stt.main:app --port 8901
+ai-term status
 ```
 
-**TTS Service (Port 8902):**
-```bash
-uv run uvicorn ai_term.tts.main:app --port 8902
-```
-
-### 2. Start the CLI
+### 3. Start the CLI
 In your main terminal:
 
 ```bash

@@ -1,6 +1,6 @@
 # Docker Guide
 
-AI-Term supports Docker for ease of deployment. This guide covers how to use Docker to run the STT (Speech-to-Text) and TTS (Text-to-Speech) services.
+ai_term supports Docker for ease of deployment. This guide covers how to use Docker to run the STT (Speech-to-Text) and TTS (Text-to-Speech) services.
 
 ## Overview
 
