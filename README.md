@@ -1,12 +1,15 @@
-# ai_term
+<div align="center">
+
+<!-- ![ai_term Banner](https://github.com/vsaravind01/ai-term/blob/master/docs/img/banner.png?raw=true) -->
+<img src="https://github.com/vsaravind01/ai-term/blob/master/docs/img/banner.png?raw=true" alt="ai_term Banner" width="400" height="auto" style="border-radius: 8px; margin-bottom: 16px;">
+
+**ai_term** is an open-source, voice-enabled terminal assistant that integrates LLMs (Large Language Models), Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful Command Line Interface (CLI) experience.
 
 [![PyPI version](https://img.shields.io/pypi/v/py-aiterm.svg)](https://pypi.org/project/py-aiterm/)
 [![Docs Deployment](https://github.com/vsaravind01/ai-term/actions/workflows/deploy_docs.yml/badge.svg)](https://github.com/vsaravind01/ai-term/actions/workflows/deploy_docs.yml)
 [![Docker Images](https://github.com/vsaravind01/ai-term/actions/workflows/docker_images.yml/badge.svg)](https://github.com/vsaravind01/ai-term/actions/workflows/docker_images.yml)
 
-**ai_term** is an open-source, voice-enabled terminal assistant that integrates LLMs (Large Language Models), Speech-to-Text (STT), and Text-to-Speech (TTS) into a powerful Command Line Interface (CLI) experience.
-
-![ai_term Banner](https://github.com/vsaravind01/ai-term/blob/master/docs/img/banner.png?raw=true)
+</div>
 
 ## Features
 
