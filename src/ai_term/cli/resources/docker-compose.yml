@@ -1,3 +1,4 @@
+name: ai_term
 services:
   stt:
     image: ghcr.io/vsaravind01/ai-term-stt:latest
