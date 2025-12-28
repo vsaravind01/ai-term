@@ -1,0 +1,107 @@
+:root {
+  /* Brand Colors from Logo */
+  --ai-purple: #C9B4FF;
+  --ai-cyan: #8DECF7;
+  --ai-purple-dim: rgba(201, 180, 255, 0.1);
+  --ai-cyan-dim: rgba(141, 236, 247, 0.1);
+  
+  /* Gradient for text/elements */
+  --ai-gradient: linear-gradient(135deg, var(--ai-purple), var(--ai-cyan));
+}
+
+/* Header Styling */
+.md-header {
+  background-color: #000000 !important;
+  border-bottom: 1px solid #222;
+}
+
+.md-header__title {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Tabs Navigation */
+.md-tabs {
+  background-color: #000000 !important;
+  border-bottom: 1px solid #222;
+}
+
+.md-tabs__link {
+  opacity: 0.7;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.md-tabs__link:hover, .md-tabs__link--active {
+  opacity: 1;
+  color: var(--ai-cyan) !important;
+}
+
+/* Content Typography */
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--ai-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.md-typeset h2 {
+    font-weight: 700;
+    margin-top: 2em;
+}
+
+/* Code Blocks - Terminal Look */
+.md-code {
+  border-radius: 8px;
+  background-color: #0b0f14 !important; /* Matches logo bg */
+  border: 1px solid #222;
+}
+
+.highlight .hll {
+    background-color: var(--ai-cyan-dim);
+}
+
+/* Admonitions */
+.md-typeset .admonition {
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.md-typeset .admonition.note,
+.md-typeset .admonition.info {
+  border-color: var(--ai-cyan);
+  background-color: rgba(141, 236, 247, 0.05);
+}
+
+/* Buttons */
+.md-button--primary {
+  background: var(--ai-gradient) !important;
+  color: #000 !important;
+  font-weight: 700;
+  border: none;
+}
+
+.md-button--primary:hover {
+  opacity: 0.9;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

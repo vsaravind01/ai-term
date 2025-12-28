@@ -1,4 +1,4 @@
-site_name: AI-Term
+site_name: ai_term
 site_description: AI Terminal Assistant Documentation
 site_url: https://vsaravind01.me/ai-term/
 repo_url: https://github.com/vsaravind01/ai-term
@@ -16,17 +16,23 @@ theme:
     - content.code.annotate
   palette:
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: black
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: black
+      accent: cyan
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search
